@@ -33,6 +33,7 @@ def run_simulation(ticker):
         price_paths[t, :] = price_paths[t-1, :] * daily_factors[t-1, :]
 
     plt.figure(figsize=(12, 6))
+    plt.style.use('seaborn-v0_8-darkgrid')
     historical_dates = close_price.index
     plt.plot(historical_dates, close_price, label='Historical Price', color='black', linewidth=2)
     plt.axvline(close_price.index[-1], color='red', linestyle='dashed', label='Simulation Start')
